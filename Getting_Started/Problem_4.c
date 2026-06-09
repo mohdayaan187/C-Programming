@@ -10,9 +10,9 @@ int main()
     cm = m * 100;
     inch = cm / 2.54;
     ft = inch / 12;
-    printf("Distance in meteres is: %.2f metres\n", m);
-    printf("Distance in centimeters is: %.2f centimeters\n", cm);
-    printf("Distance in inches is: %.2f inches\n", inch);
-    printf("Distance in feet is: %.2f feet\n", ft);
+    printf("Distance in meteres = %.2f metres\n", m);
+    printf("Distance in centimeters = %.2f centimeters\n", cm);
+    printf("Distance in inches = %.2f inches\n", inch);
+    printf("Distance in feet = %.2f feet\n", ft);
     return 0;
 }
