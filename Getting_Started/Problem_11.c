@@ -19,6 +19,7 @@ int main()
 
     five = N / 5;
     N = N % 5;
+    
     two = N / 2;
     N = N % 2;
 
