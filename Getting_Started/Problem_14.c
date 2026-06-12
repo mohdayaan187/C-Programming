@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 #include <math.h>
+#define PI 3.14159
 
 int main()
 {
@@ -10,7 +11,7 @@ int main()
     scanf("%f %f", &x, &y);
     
     r = sqrt(x * x + y * y); 
-    theta = atan(y / x) * (180 / M_PI); 
+    theta = atan(y / x) * (180 / PI); 
 
     printf("Polar coordinates (r, theta) = (%.2f, %.2f degrees)", r, theta);
     
