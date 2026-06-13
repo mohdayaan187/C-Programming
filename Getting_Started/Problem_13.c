@@ -1,30 +1,19 @@
-//To calculate sum of digits of a 5-digit number//
+//To convert cartesian coordinates to polar coordinates//
 
 #include <stdio.h>
+#include <math.h>
+#define PI 3.14159
+
 int main()
 {
-    int num, sum;
-    int d1, d2, d3, d4, d5;
+    float x, y, r, theta;
+    printf("Enter the cartesian coordinates (x and y): ");
+    scanf("%f %f", &x, &y);
     
-    printf("Enter a 5-digit number: ");
-    scanf("%d", &num);
+    r = sqrt(x * x + y * y); 
+    theta = atan(y / x) * (180 / PI); 
 
-    d5 = num % 10;
-    num = num / 10;
+    printf("Polar coordinates (r, theta) = (%.2f, %.2f degrees)", r, theta);
     
-    d4 = num % 10;
-    num = num / 10;
-
-    d3 = num % 10;
-    num = num / 10;
-
-    d2 = num % 10;
-    num = num / 10; 
-
-    d1 = num % 10; 
-    
-    sum = d1 + d2 + d3 + d4 + d5;
-    printf("Sum of digits = %d", sum);
-
     return 0;
 }

@@ -1,25 +1,18 @@
-//To calculate distance in nautical miles from the latitude and longitude of two places//
+//To calculate wind chill from the given temperature and wind speed//
 
 #include <stdio.h>
 #include <math.h>
-#define PI 3.14159
-
 int main()
 {
-    float L1, G1, L2, G2, distance;
-    printf("Enter the latitude and longitude of the first place (L1 G1) in degrees: ");
-    scanf("%f %f", &L1, &G1);
-    printf("Enter the latitude and longitude of the second place (L2 G2) in degrees: ");
-    scanf("%f %f", &L2, &G2);
+    float t, v, wcf;
+    printf("Enter the temperature in Fahrenheit (t <= 50): ");
+    scanf("%f", &t);
+    printf("Enter the wind speed in miles per hour (v >= 3): ");
+    scanf("%f", &v);
 
-    L1 = L1 * (PI / 180);
-    G1 = G1 * (PI / 180); 
-    L2 = L2 * (PI / 180);
-    G2 = G2 * (PI / 180);
+    wcf = 35.74 + (0.6215 * t) - (35.75 * pow(v, 0.16)) + (0.4275 * t * pow(v, 0.16)); 
 
-    distance = 3440 * acos(sin(L1) * sin(L2) + cos(L1) * cos(L2) * cos(G2 - G1)); 
-
-    printf("Distance between the two places: %.2f nautical miles", distance);
+    printf("The wind chill factor is: %.2f", wcf);
     
     return 0;
 }

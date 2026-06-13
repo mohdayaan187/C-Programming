@@ -1,4 +1,4 @@
-//To convert cartesian coordinates to polar coordinates//
+//To calculate distance in nautical miles from the latitude and longitude of two places//
 
 #include <stdio.h>
 #include <math.h>
@@ -6,14 +6,20 @@
 
 int main()
 {
-    float x, y, r, theta;
-    printf("Enter the cartesian coordinates (x and y): ");
-    scanf("%f %f", &x, &y);
-    
-    r = sqrt(x * x + y * y); 
-    theta = atan(y / x) * (180 / PI); 
+    float L1, G1, L2, G2, distance;
+    printf("Enter the latitude and longitude of the first place (L1 G1) in degrees: ");
+    scanf("%f %f", &L1, &G1);
+    printf("Enter the latitude and longitude of the second place (L2 G2) in degrees: ");
+    scanf("%f %f", &L2, &G2);
 
-    printf("Polar coordinates (r, theta) = (%.2f, %.2f degrees)", r, theta);
+    L1 = L1 * (PI / 180);
+    G1 = G1 * (PI / 180); 
+    L2 = L2 * (PI / 180);
+    G2 = G2 * (PI / 180);
+
+    distance = 3440 * acos(sin(L1) * sin(L2) + cos(L1) * cos(L2) * cos(G2 - G1)); 
+
+    printf("Distance between the two places: %.2f nautical miles", distance);
     
     return 0;
 }

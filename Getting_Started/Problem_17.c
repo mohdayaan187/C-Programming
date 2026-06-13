@@ -1,23 +1,21 @@
-//To calculate all trigonometric ratios of an angle//
+//To interchange the contents of two locations//
 
 #include <stdio.h>
-#include <math.h>
-#define PI 3.14159
-
 int main()
 {
-    float angle, radian;
-    printf("Enter the angle in degrees: ");
-    scanf("%f", &angle);
+    int C, D, temp;
+    printf("Enter the value for location C: ");
+    scanf("%d", &C);
+    printf("Enter the value for location D: ");
+    scanf("%d", &D);
 
-    radian = angle * (PI / 180);
+    temp = C; 
+    C = D; 
+    D = temp; 
 
-    printf("Sine: %.2f\n", sin(radian));
-    printf("Cosine: %.2f\n", cos(radian));
-    printf("Tangent: %.2f\n", tan(radian));
-    printf("Cosecant: %.2f\n", 1 / sin(radian));
-    printf("Secant: %.2f\n", 1 / cos(radian));
-    printf("Cotangent: %.2f\n", 1 / tan(radian));
+    printf("After interchanging:\n");
+    printf("Value stored in C: %d\n", C);
+    printf("Value stored in D: %d", D);
 
     return 0;
 }

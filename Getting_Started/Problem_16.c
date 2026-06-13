@@ -1,18 +1,23 @@
-//To calculate wind chill from the given temperature and wind speed//
+//To calculate all trigonometric ratios of an angle//
 
 #include <stdio.h>
 #include <math.h>
+#define PI 3.14159
+
 int main()
 {
-    float t, v, wcf;
-    printf("Enter the temperature in Fahrenheit (t <= 50): ");
-    scanf("%f", &t);
-    printf("Enter the wind speed in miles per hour (v >= 3): ");
-    scanf("%f", &v);
+    float angle, radian;
+    printf("Enter the angle in degrees: ");
+    scanf("%f", &angle);
 
-    wcf = 35.74 + (0.6215 * t) - (35.75 * pow(v, 0.16)) + (0.4275 * t * pow(v, 0.16)); 
+    radian = angle * (PI / 180);
 
-    printf("The wind chill factor is: %.2f", wcf);
-    
+    printf("Sine: %.2f\n", sin(radian));
+    printf("Cosine: %.2f\n", cos(radian));
+    printf("Tangent: %.2f\n", tan(radian));
+    printf("Cosecant: %.2f\n", 1 / sin(radian));
+    printf("Secant: %.2f\n", 1 / cos(radian));
+    printf("Cotangent: %.2f\n", 1 / tan(radian));
+
     return 0;
 }
