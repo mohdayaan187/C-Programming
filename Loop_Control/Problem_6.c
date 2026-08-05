@@ -20,7 +20,6 @@ int main()
         temp = temp/10;
 
         d3 = temp % 10;
-        temp = temp/10;
 
         if(pow(d1,3) + pow(d2,3) + pow(d3,3) == i)
             printf("%d\n", i);
