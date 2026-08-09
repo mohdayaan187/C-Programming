@@ -13,7 +13,7 @@ int main()
     y = (x - 1)/x;
     float sum = y;
 
-    for(i=2; i<=20; i++)
+    for(i=2; i<=7; i++)
     {
         sum = sum + ((1.0/i)*pow(y,i));
     }
